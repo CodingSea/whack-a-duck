@@ -24,7 +24,12 @@ function init()
         cells[duckPosition].classList.remove("duck");
     }
 
-    
+    function placeRandomDuck()
+    {
+        removeDuck();
+        duckPosition = Math.floor(Math.random() * numberOfCells);
+        addDuck();
+    }
 
     function play()
     {
@@ -32,9 +37,7 @@ function init()
         {
             if(totalDucks <= 10)
             {
-                removeDuck();
-                duckPosition = Math.floor(Math.random() * numberOfCells);
-                addDuck();
+                placeRandomDuck();
             }
             else
             {
@@ -75,9 +78,7 @@ function init()
         {
             audioElem.pause();
             audioElem.currentTime = 0;
-            removeDuck();
-            duckPosition = Math.floor(Math.random() * numberOfCells);
-            addDuck();
+            placeRandomDuck();
             score += 10;
             scoreElem.textContent = score;
             audioElem.play();
