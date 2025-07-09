@@ -11,6 +11,13 @@
 {
     border: 1px solid black;
 
-    width: 58px;
+    width: 58.65px;
     height: 58px;
+}
+
+.duck
+{
+    background-image: url(../assets/duck.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
